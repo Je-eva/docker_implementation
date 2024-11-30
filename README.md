@@ -5,5 +5,5 @@ Docker Basics: Overview of containers and images for reproducibility.
 Building Docker Images: Crafting tailored environments for data science tools like Python and Jupyter.
 Running and Managing Containers: Simplifying execution and scaling of data science applications.
 Integration and Deployment: Efficiently deploying machine learning models and working with frameworks.
-This tutorial significantly simplifies the complexity of managing dependencies and environments, making it a must-watch for anyone venturing into data science! You can find the tutorial here. 🚀
+This tutorial significantly simplifies the complexity of managing dependencies and environments, making it a must-watch for anyone venturing into data science! You can find the tutorial [here](https://www.youtube.com/watch?v=8vmKtS8W7IQ). 🚀
 
