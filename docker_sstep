@@ -1,21 +1,51 @@
-(venv) (F:\newproj\venv) F:\newproj>docker build -t welcome-app .
-docker build -t welcome-app .
-docker run -p 5000:5000 welcome-app
-              (host port: container port)
-howevenr, wont work initilla, howevr works on localhost:xxxx
-docker rmi abc1234def56
-(venv) (F:\newproj\venv) F:\newproj>docker rmi -f e84be0230a81
-(venv) (F:\newproj\venv) F:\newproj>docker stop 171f4d2458f7
-docekr ps
-docker stop
-docker login
-name should be username/name_of_progrm,else cant push
-docker tag previuosname new name(rename )
-docker push jeevaj3v/welcome-app
-docker pull ...
-docker run -d -p 5000:5000 jeevaj3v/welcome-app
-copy . . = means that the all files in the ucrrent folder we have are mimported
+# Docker Workflow Notes
 
-mkae sure other fiels arent in the folder
+1. Build Docker Image
+   docker build -t welcome-app .
+   - `-t welcome-app`: Tags the image as `welcome-app`.
+   - `.`: Refers to the current folder containing the `Dockerfile`.
 
-docker compose up
+2. Run Docker Container
+   docker run -p 5000:5000 welcome-app
+   - `5000:5000`: Maps the host port to the container port.
+   - Check the application by visiting `http://localhost:5000` on your browser.
+
+## Managing Docker Images and Containers
+3. List Running Containers
+   docker ps
+
+4. Stop a Running Container
+   docker stop <CONTAINER_ID>
+
+5. Remove an Image
+   docker rmi <IMAGE_ID>
+   - Use `-f` to force remove an image:
+     docker rmi -f <IMAGE_ID>
+
+6. Tagging a Docker Image
+   docker tag <old_name> <new_name>
+   - Example:
+     docker tag welcome-app jeevaj3v/welcome-app
+   - Required for pushing to Docker Hub: Format is `username/repository_name`.
+
+---
+
+## Pushing and Pulling Images
+7. Log in to Docker Hub
+   docker login
+
+8. Push an Image to Docker Hub
+   docker push jeevaj3v/welcome-app
+
+9. Pull an Image from Docker Hub
+   docker pull jeevaj3v/welcome-app
+
+10. Run Pulled Image
+    docker run -d -p 5000:5000 jeevaj3v/welcome-app
+    - `-d`: Runs the container in detached mode.
+
+
+## Additional Notes
+1. Use `docker compose up` for managing multi-container applications.
+2. The `COPY . .` command in Dockerfile ensures all files in the current folder are imported into the image.
+   - **Tip**: Ensure unnecessary files are not in the folder before building.
